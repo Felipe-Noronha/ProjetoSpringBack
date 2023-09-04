@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/provaapirest?gssEncMode=disable
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
+
+
+cors:
+    allowed-origins: "http://localhost:4200"
+    allowed-methods: GET, POST, PUT, DELETE
+    allowed-headers: "*"
+    allow-credentials: true
+    max-age: 3600
